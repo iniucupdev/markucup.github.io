@@ -1,0 +1,49 @@
+
+<html>
+  <head>
+    <title>Cara Membuat Validasi Umur dengan Jquery</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	
+	<script type="text/javascript">
+      $(document).ready(function (){
+        $(".error").hide();
+        $(".verifikasi").hide();
+        $("#submit").click(function(e){
+          e.preventDefault()
+          if($("#kotak_info").val() < 85 || $("#kotak_info").val() > 100 ){
+            $(".error").show();
+            $(".verifikasi").hide();
+            var tes = $("#kotak_info").val();
+           $(".hasilError").html("<button class='btn btn-circle btn-danger' type='submit' value ='' onclick='jvApprove(21, '.$jwb_status.')>simpan</button>")
+           
+          }else {
+            $(".error").hide();
+            $(".verifikasi").hide();
+            $(".hasilveri").html("<button class='btn btn-circle btn-success btn-sm' type='submit' value ='' onclick='jvApprove(21, '.$jwb_status.')>simpan</button>")
+
+                // $("#btnSetujui").on("click",function(){
+                //     jvApprove(21, '.$jwb_status.');
+                // });
+          } 
+        })
+        
+      })
+    </script>
+  </head>
+  <body>
+    <form id="signup" method="post" action="">
+    <div>
+	    <span class="label">Masukkan Usia Anda </span>
+  		<input type="text" id="kotak_info" name="usia"/>
+  
+	  </div>
+      <input id="submit" type="submit" value="Submit">
+
+      <div class="error"><span class="hasilError"></span></div>
+      <div class="verifikasi"><span class="hasilveri"></span></div>
+    </form>
+  </body>
+</html>
